@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+    <constant name="developer" value="chenzhe"/>
+    <constant name="struts.devMode" value="true"/><!--修改struts.xml不需要重启服务器-->
+
+    <package name="mybase" extends="struts-default">
+        <global-results>
+            <result name="add1">/WEB-INF/pages/add1.jsp</result>
+            <result name="add2">/WEB-INF/pages/add2.jsp</result>
+        </global-results>
+    </package>
+
+    <package name="struts2" extends="mybase">
+        <default-action-ref name="default404"></default-action-ref>
+        <action name="HelloWorld" class="org.cz.HelloWorldAction">
+            <result>/WEB-INF/pages/HelloWorld.jsp</result>
+            <result name="mypage">/WEB-INF/pages/mypage.jsp</result>
+        </action>
+        <action name="mytest" class="org.cz.HelloWorldAction" method="myPage">
+            <result name="mypage">/WEB-INF/pages/mypage.jsp</result>
+        </action>
+        <action name="default404">
+            <result>/WEB-INF/pages/errors/404.jsp</result>
+        </action>
+        <action name="add-*" class="org.cz.HelloWorldAction" method="{1}"/>
+        <action name="form" class="org.cz.HelloWorldAction" method="form">
+            <result name = "form">/WEB-INF/pages/form.jsp</result>
+        </action>
+        <action name="getform" class="org.cz.HelloWorldAction" method="getForm">
+            <result name="getform">/WEB-INF/pages/getform.jsp</result>
+        </action>
+    </package>
+</struts>
