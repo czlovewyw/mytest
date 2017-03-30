@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring Travel: Spring MVC and Web Flow Reference Application</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="../resources/css/ie6.css"/>
+    <![endif]-->
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div id="topbar">
+            <p><a href="#">Login</a></p>
+        </div>
+
+        <div id="logo">
+            <p>
+                <a href="#"><img src="../resources/images/header.jpg" alt="generic hotel" /></a>
+            </p>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="primary">
+            <div class="searchDiv">
+                <h1>Search Hotels</h1>
+
+            <form id="searchCriteria" action="/SpringWebFlowTutorial/hotels" method="get">
+                <fieldset>
+                    <div class="span8">
+                        <label for="searchString" class="label">Search String:</label>
+                        <input id="searchString" name="searchString" type="text" value=""/>
+                    </div>
+
+                    <div class="span6">
+                        <label for="pageSize" class="label">Maximum results:</label>
+                        <select id="pageSize" name="pageSize">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+
+                    <div class="span3 last">
+                        <input type="submit" value="Find Hotels" class="button" />
+                    </div>
+                </fieldset>
+            </form>
+            </div>
+        </div>
+
+        <div id="secondary">
+            <p>
+                <a href="http://www.thespringexperience.com">
+					<img src="../resources/images/diplomat.jpg" alt="generic hotel" />
+				</a>
+            </p>
+            <p class="center">
+				<a href="http://www.thespringexperience.com">
+					<img src="../resources/images/springone2gx.jpeg" alt="SpringOne 2GX" />
+				</a>
+			</p>
+        </div>
+
+
+    </div>
+
+    <div id="footer">
+        <a href="http://www.springframework.org">
+			<img src="../resources/images/powered-by-spring.png" alt="Powered by Spring" />
+		</a>
+    </div>
+</div>
+</body>
+</html>

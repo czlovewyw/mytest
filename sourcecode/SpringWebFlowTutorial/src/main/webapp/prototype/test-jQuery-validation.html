@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring Travel: Spring MVC and Web Flow Reference Application</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="../resources/css/ie6.css"/>
+    <![endif]-->
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div id="topbar">
+            <p><a href="#">Login</a></p>
+        </div>
+
+        <div id="logo">
+            <p>
+                <a href="#"><img src="../resources/images/header.jpg" alt="generic hotel" /></a>
+            </p>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="primary">
+            <div class="span5">
+                <p>Valid username/passwords are:</p>
+                <ul>
+                    <li>keith/melbourne</li>
+                    <li>erwin/leuven</li>
+                    <li>jeremy/atlanta</li>
+                    <li>scott/rochester</li>
+                </ul>
+            </div>
+
+            <div class="span10 last">
+                <form id="loginForm" action="/loginProcess" method="post" autocomplete="off">
+                    <fieldset>
+                        <legend class="label">Login Information</legend>
+                        <p>
+
+                            <label for="j_username" class="label">User:</label>
+                            <br />
+                            <input type="text" name="j_username" id="j_username"  />
+                        </p>
+                        <p>
+                            <label for="j_password" class="label">Password:</label>
+
+                            <br />
+                            <input type="password" name="j_password" id="j_password" />
+                        </p>
+                        <p>
+                            <input type="checkbox" name="_spring_security_remember_me" id="remember_me" />
+                            <label for="remember_me" class="label">Don't ask for my password for two weeks:</label>
+                        </p>
+
+                        <p>
+                            <button id="submit" type="submit">Login</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+
+            <script type="text/javascript" src="../resources/js/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
+                    var validator = jQuery("#loginForm").validate({
+                        rules: {
+                            j_username: {
+                                required: true,
+                                email:true
+
+                            },
+                            j_password: {
+                                required: true,
+                                minlength: 3
+                            }
+                        },
+                        messages: {
+                            j_username: {
+                                required: "username is required",
+                                email: "please input a valid email"
+                            },
+                            j_password: {
+                                required: "password is required",
+                                minlength: jQuery.format("Enter at least {0} characters")
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="secondary">
+            <p>
+                <a href="http://www.thespringexperience.com">
+					<img src="../resources/images/diplomat.jpg" alt="generic hotel" />
+				</a>
+            </p>
+            <p class="center">
+				<a href="http://www.thespringexperience.com">
+					<img src="../resources/images/springone2gx.jpeg" alt="SpringOne 2GX" />
+				</a>
+			</p>
+        </div>
+
+
+    </div>
+
+    <div id="footer">
+        <a href="http://www.springframework.org">
+			<img src="../resources/images/powered-by-spring.png" alt="Powered by Spring" />
+		</a>
+    </div>
+</div>
+</body>
+</html>

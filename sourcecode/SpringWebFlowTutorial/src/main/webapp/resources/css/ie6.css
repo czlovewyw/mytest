@@ -1,0 +1,7 @@
+* html #secondary{
+    display:inline;
+}
+
+* html #primary .lastParagraph{
+    display: inline;
+}
