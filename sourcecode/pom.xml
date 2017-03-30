@@ -12,6 +12,7 @@
         <module>struts2test</module>
         <module>es-test</module>
         <module>common</module>
+        <module>springwebflowtest</module>
     </modules>
 
     <dependencies>
