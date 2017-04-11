@@ -3,6 +3,39 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <filter>
+        <filter-name>CASFilter</filter-name>
+        <filter-class>
+            cn.com.hnisi.authentication.client.filter.CASFilterExtend
+        </filter-class>
+        <!--远程cas服务器登录Ip和端口-->
+        <init-param>
+            <param-name>casserverLoginIP</param-name>
+            <param-value>192.168.26.12:8080</param-value>
+        </init-param>
+        <!--远程cas服务器票据认证服务ip和端口-->
+        <init-param>
+            <param-name>casserverValidateIP</param-name>
+            <param-value>192.168.26.12:8080</param-value>
+        </init-param>
+        <!--应用自身ip和端口-->
+        <init-param>
+            <param-name>serverIP</param-name>
+            <param-value>192.168.1.9:7001</param-value>
+        </init-param>
+        <!--登录注册类，实现ILoginInfoRegister接口，用于在登录成功后获取principle相关信息-->
+        <init-param>
+            <param-name>loginInfoRegisterClass</param-name>
+            <param-value>org.cz.LoginInfoRegisterImpl</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CASFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
     <!-- Struts2配置 -->
     <filter>
         <filter-name>struts2</filter-name>

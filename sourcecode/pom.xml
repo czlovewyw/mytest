@@ -13,13 +13,14 @@
         <module>es-test</module>
         <module>common</module>
         <module>springwebflowtest</module>
+        <module>zk-gui</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.9</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.zookeeper</groupId>-->
+            <!--<artifactId>zookeeper</artifactId>-->
+            <!--<version>3.4.9</version>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: zookeeper-3.3.0.jar TableLayout-20050920.jar jtoaster-1.0.
+ 4.jar log4j-1.2.15.jar
+Main-Class: org.cz.inspector.ZooInspector
+
