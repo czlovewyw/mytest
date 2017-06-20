@@ -37,12 +37,12 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>casclient</groupId>
-            <artifactId>casclient-1.4</artifactId>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/casclient-1.4.jar</systemPath>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>casclient</groupId>-->
+            <!--<artifactId>casclient-1.4</artifactId>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/casclient-1.4.jar</systemPath>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>

@@ -1,0 +1,172 @@
+package vision.apollo.rmp.task.dal;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import jef.database.DataObject;
+import jef.database.annotation.FieldOfTargetEntity;
+import jef.tools.StringUtils;
+import vision.apollo.rmp.task.dal.UpsAppType;
+
+@Entity
+@Table(
+    name = "RM_TASK_TYPE"
+)
+public class TaskType extends DataObject {
+    private static final long serialVersionUID = 1856681134814835093L;
+    @Id
+    @Column(
+        name = "CODE",
+        length = 64,
+        columnDefinition = "varchar(64)"
+    )
+    private String code = StringUtils.generateGuid();
+    @Column(
+        name = "NAME",
+        length = 64,
+        columnDefinition = "varchar(64)"
+    )
+    private String name;
+    @Column(
+        name = "TASK_CLASS",
+        length = 255,
+        columnDefinition = "varchar(255)"
+    )
+    private String taskClass;
+    @Lob
+    @Column(
+        name = "CONTENT",
+        columnDefinition = "clob"
+    )
+    private String content;
+    @Column(
+        name = "REMARK",
+        length = 255,
+        columnDefinition = "varchar(255)"
+    )
+    private String remark;
+    @Column(
+        name = "BUILD_IN",
+        columnDefinition = "boolean"
+    )
+    private boolean buildin;
+    @Column(
+        name = "APP_TYPECODE",
+        length = 64,
+        columnDefinition = "varchar(64)"
+    )
+    private String appTypeCode;
+    @ManyToOne(
+        targetEntity = UpsAppType.class,
+        cascade = {CascadeType.REFRESH}
+    )
+    @JoinColumn(
+        name = "appTypeCode",
+        referencedColumnName = "code"
+    )
+    private UpsAppType appType;
+    @ManyToOne(
+        targetEntity = UpsAppType.class
+    )
+    @JoinColumn(
+        name = "appTypeCode",
+        referencedColumnName = "code"
+    )
+    @FieldOfTargetEntity("name")
+    private String appTypeName;
+    @Column(
+        name = "TRIGGER_ID",
+        precision = 10,
+        columnDefinition = "number(10) default 0",
+        nullable = false
+    )
+    private int trigger;
+
+    public TaskType() {
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTaskClass() {
+        return this.taskClass;
+    }
+
+    public void setTaskClass(String taskClass) {
+        this.taskClass = taskClass;
+    }
+
+    public String getContent() {
+        return this.content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getRemark() {
+        return this.remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public boolean isBuildin() {
+        return this.buildin;
+    }
+
+    public void setBuildin(boolean buildin) {
+        this.buildin = buildin;
+    }
+
+    public String getAppTypeCode() {
+        return this.appTypeCode;
+    }
+
+    public void setAppTypeCode(String appTypeCode) {
+        this.appTypeCode = appTypeCode;
+    }
+
+    public UpsAppType getAppType() {
+        return this.appType;
+    }
+
+    public void setAppType(UpsAppType appType) {
+        this.appType = appType;
+    }
+
+    public String getAppTypeName() {
+        return this.appTypeName;
+    }
+
+    public void setAppTypeName(String appTypeName) {
+        this.appTypeName = appTypeName;
+    }
+
+    public int getTrigger() {
+        return this.trigger;
+    }
+
+    public void setTrigger(int trigger) {
+        this.trigger = trigger;
+    }
+}

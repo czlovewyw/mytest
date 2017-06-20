@@ -1,0 +1,208 @@
+package vision.apollo.rmp.task.dal;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import jef.database.DataObject;
+import jef.database.annotation.FieldOfTargetEntity;
+import jef.tools.StringUtils;
+import vision.apollo.rmp.task.dal.UpsAppType;
+import vision.apollo.rmp.task.dal.TaskType.Field;
+
+@Entity
+@Table(
+    name = "RM_TASK_TYPE"
+)
+public class TaskType extends DataObject {
+    private static final long serialVersionUID = 1856681134814835093L;
+    @Id
+    @Column(
+        name = "CODE",
+        length = 64,
+        columnDefinition = "varchar(64)"
+    )
+    private String code = StringUtils.generateGuid();
+    @Column(
+        name = "NAME",
+        length = 64,
+        columnDefinition = "varchar(64)"
+    )
+    private String name;
+    @Column(
+        name = "TASK_CLASS",
+        length = 255,
+        columnDefinition = "varchar(255)"
+    )
+    private String taskClass;
+    @Lob
+    @Column(
+        name = "CONTENT",
+        columnDefinition = "clob"
+    )
+    private String content;
+    @Column(
+        name = "REMARK",
+        length = 255,
+        columnDefinition = "varchar(255)"
+    )
+    private String remark;
+    @Column(
+        name = "BUILD_IN",
+        columnDefinition = "boolean"
+    )
+    private boolean buildin;
+    @Column(
+        name = "APP_TYPECODE",
+        length = 64,
+        columnDefinition = "varchar(64)"
+    )
+    private String appTypeCode;
+    @ManyToOne(
+        targetEntity = UpsAppType.class,
+        cascade = {CascadeType.REFRESH}
+    )
+    @JoinColumn(
+        referencedColumnName = "code",
+        name = "appTypeCode"
+    )
+    private UpsAppType appType;
+    @ManyToOne(
+        targetEntity = UpsAppType.class
+    )
+    @JoinColumn(
+        referencedColumnName = "code",
+        name = "appTypeCode"
+    )
+    @FieldOfTargetEntity("name")
+    private String appTypeName;
+    @Column(
+        nullable = false,
+        precision = 10,
+        name = "TRIGGER_ID",
+        columnDefinition = "number(10) default 0"
+    )
+    private int trigger;
+
+    public TaskType() {
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public void setCode(String var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.code, var1, true);
+        }
+
+        this.code = var1;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.name, var1, true);
+        }
+
+        this.name = var1;
+    }
+
+    public String getTaskClass() {
+        return this.taskClass;
+    }
+
+    public void setTaskClass(String var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.taskClass, var1, true);
+        }
+
+        this.taskClass = var1;
+    }
+
+    public String getContent() {
+        this.beforeGet("content");
+        return this.content;
+    }
+
+    public void setContent(String var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.content, var1, true);
+        }
+
+        this.content = var1;
+    }
+
+    public String getRemark() {
+        return this.remark;
+    }
+
+    public void setRemark(String var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.remark, var1, true);
+        }
+
+        this.remark = var1;
+    }
+
+    public boolean isBuildin() {
+        return this.buildin;
+    }
+
+    public void setBuildin(boolean var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.buildin, Boolean.valueOf(var1), true);
+        }
+
+        this.buildin = var1;
+    }
+
+    public String getAppTypeCode() {
+        return this.appTypeCode;
+    }
+
+    public void setAppTypeCode(String var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.appTypeCode, var1, true);
+        }
+
+        this.appTypeCode = var1;
+    }
+
+    public UpsAppType getAppType() {
+        this.beforeGet("appType");
+        return this.appType;
+    }
+
+    public void setAppType(UpsAppType appType) {
+        this.appType = appType;
+    }
+
+    public String getAppTypeName() {
+        this.beforeGet("appTypeName");
+        return this.appTypeName;
+    }
+
+    public void setAppTypeName(String appTypeName) {
+        this.appTypeName = appTypeName;
+    }
+
+    public int getTrigger() {
+        return this.trigger;
+    }
+
+    public void setTrigger(int var1) {
+        if(this._recordUpdate) {
+            this.prepareUpdate(Field.trigger, Integer.valueOf(var1), true);
+        }
+
+        this.trigger = var1;
+    }
+}
