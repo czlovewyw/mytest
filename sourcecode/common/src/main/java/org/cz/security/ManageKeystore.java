@@ -15,11 +15,14 @@ import java.util.Base64;
 public class ManageKeystore {
     public static void main (String[] args) throws Exception {
 //        KeyStore ks = getKeystore("d:\\test.keystore","123456");
-        KeyStore ks = getKeystore("d:\\tomcat.keystore","88075998");
-        PrivateKey privateKey = getPrivateKey(ks,"wyw","123456");
-        System.out.println(Base64.getEncoder().encodeToString(privateKey.getEncoded()));
+        KeyStore ks = getKeystore("d:\\CA\\certs\\client.p12","123456");
+        PrivateKey privateKey = getPrivateKey(ks,"1","123456");
+        System.out.println("私钥："+Base64.getEncoder().encodeToString(privateKey.getEncoded()));
 //        System.out.println(privateKey.getAlgorithm());
 //        System.out.println(getCertificate(ks,"client").equals(getCertificateFromFile("d:\\client.cer")));
+//        System.out.println(getCertificate(ks,"clientp12").getIssuerDN());
+        PublicKey publicKey = getPublicKey(getCertificate(ks,"1"));
+        System.out.println("公钥："+Base64.getEncoder().encodeToString(publicKey.getEncoded()));
     }
 
     /**
@@ -33,7 +36,8 @@ public class ManageKeystore {
      * @throws NoSuchAlgorithmException
      */
     public static KeyStore getKeystore(String keystorePath,String password) throws KeyStoreException, IOException, CertificateException, NoSuchAlgorithmException {
-        KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+//        KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+        KeyStore ks = KeyStore.getInstance("pkcs12");
         FileInputStream in = new FileInputStream(keystorePath);
         ks.load(in,password.toCharArray());
         in.close();

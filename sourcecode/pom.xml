@@ -14,6 +14,7 @@
         <module>common</module>
         <module>springwebflowtest</module>
         <module>zk-gui</module>
+        <module>webjars</module>
     </modules>
 
     <dependencies>
