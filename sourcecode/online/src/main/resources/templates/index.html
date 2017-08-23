@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>online</title>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        var url="hangup";
+        $(function () {
+            flushDatas();
+            $("#my").on("click","tr td button[role='addDoing']",function(){
+                var e = $(this);
+                $.post("addDoing",{"name":e.parents("tr").children("td:eq(0)").html()},function (data) {
+                    if(data.status==1){
+                        e.parents("tr").children("td:eq(1)").text(data.teamer.doing);
+                    }else{
+                        alert(data.message);
+                    }
+                })
+            })
+            $("#my").on("click","tr td button[role='addDone']",function(){
+                var e = $(this);
+                $.post("addDone",{"name":e.parents("tr").children("td:eq(0)").html()},function (data) {
+                    if(data.status==1){
+                        e.parents("tr").children("td:eq(1)").text(data.teamer.doing);
+                        e.parents("tr").children("td:eq(2)").text(data.teamer.done);
+                    }else{
+                        alert(data.message);
+                    }
+                })
+            })
+            $("#my").on("click","tr td button[role='hangup']",function(){
+                var e = $(this);
+                $.post(e.attr('url'),{"name":e.parents("tr").children("td:eq(0)").html()},function (data) {
+                    if(data.status==1){
+                        if(data.teamer.status==true){
+                            e.text("挂起");
+                            e.attr('url','hangup');
+                            e.parents("tr").find("button[role='addDoing']").prop("disabled",false);
+                            e.parents("tr").find("button[role='addDone']").prop("disabled",false);
+                        }else{
+                            e.text("启用");
+                            e.attr('url','open');
+
+                            e.parents("tr").find("button[role='addDoing']").prop("disabled",true);
+                            e.parents("tr").find("button[role='addDone']").prop("disabled",true);
+                        }
+                    }else{
+                        alert(data.message);
+                    }
+
+                })
+            })
+            setInterval(flushDatas,1000*60);
+        });
+        var flushDatas = function () {
+            $.getJSON("latestStatus",function (data) {
+                var tbody = $("#my tbody");
+                tbody.empty();
+                $.each(data,function(index,e){
+                    var tr = $("<tr></tr>");
+                    tr.append($("<td></td>").text(e.name));
+                    tr.append($("<td></td>").text(e.doing));
+                    tr.append($("<td></td>").text(e.done));
+
+                    var doingBt=$("<button></button>");
+                    doingBt.text("分配任务").attr("role","addDoing");
+                    var doneBt = $("<button></button>");
+                    doneBt.text("完成任务").attr("role","addDone");
+                    var hangBt = $("<button></button>");
+                    hangBt.attr("role","hangup");
+                    if(e.status==true){
+                        hangBt.attr("url","hangup").text("挂起");
+                    }else{
+                        hangBt.attr("url","open").text("启用");
+                        doneBt.prop("disabled",true);
+                        doingBt.prop("disabled",true);
+                    }
+                    tr.append($("<td></td>").append(doingBt));
+                    tr.append($("<td></td>").append(doneBt));
+                    tr.append($("<td></td>").append(hangBt));
+                    tbody.append(tr);
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+<table id="my">
+    <thead>
+    <th>姓名</th>
+    <th>进行中</th>
+    <th>已完成</th>
+    <th>分配任务</th>
+    <th>完结任务</th>
+    <th>挂起</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</body>
+</html>

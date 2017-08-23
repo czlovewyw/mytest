@@ -16,9 +16,9 @@ import java.util.Base64;
  */
 public class EncryptDemo {
     public static void main(String[] args) throws Exception {
-        KeyStore ks = ManageKeystore.getKeystore("d:\\tomcat.keystore","88075998");
-        PrivateKey privateKey = ManageKeystore.getPrivateKey(ks,"cz","88075998");
-        PublicKey publicKey = ManageKeystore.getPublicKey(ManageKeystore.getCertificate(ks,"cz"));
+        KeyStore ks = ManageKeystore.getKeystore("d:/CA/certs/server.p12","123456");
+        PrivateKey privateKey = ManageKeystore.getPrivateKey(ks,"1","123456");
+        PublicKey publicKey = ManageKeystore.getPublicKey(ManageKeystore.getCertificate(ks,"1"));
 
         String message = "这段数据即将被公钥加密";
         System.out.println("公钥加密前数据："+message);

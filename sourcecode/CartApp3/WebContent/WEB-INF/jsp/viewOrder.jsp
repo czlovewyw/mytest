@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Order</h1>
-	<a href="${flowExecutionUrl}&_eventId=confirm">Confirm</a>
+	<JDKSerialize href="${flowExecutionUrl}&_eventId=confirm">Confirm</JDKSerialize>
 </body>
 </html>

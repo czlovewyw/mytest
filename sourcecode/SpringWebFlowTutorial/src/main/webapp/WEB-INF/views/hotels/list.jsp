@@ -10,7 +10,7 @@
         <c:param name="searchString" value="${searchCriteria.searchString}"/>
         <c:param name="pageSize" value="${searchCriteria.pageSize}"/>
     </c:url>
-    <a id="changeSearchLink" href="${changeSearchLink}">Change Search</a>
+    <JDKSerialize id="changeSearchLink" href="${changeSearchLink}">Change Search</JDKSerialize>
     <script type="text/javascript">
         Spring.addDecoration(new Spring.AjaxEventDecoration({
             elementId: "changeSearchLink",
@@ -42,7 +42,7 @@
                     <td>${hotel.address}</td>
                     <td>${hotel.city}, ${hotel.state}, ${hotel.country}</td>
                     <td>${hotel.zip}</td>
-                    <td><a href="hotels/${hotel.id}">View Hotel</a></td>
+                    <td><JDKSerialize href="hotels/${hotel.id}">View Hotel</JDKSerialize></td>
                 </tr>
             </c:forEach>
         </c:when>
@@ -69,7 +69,7 @@
                     <s:param name="searchString" value="${searchCriteria.searchString}"/>
                     <s:param name="pageSize" value="${searchCriteria.pageSize}"/>
                 </s:url>
-                <a href="${firstLink}" class="button">First</a>
+                <JDKSerialize href="${firstLink}" class="button">First</JDKSerialize>
             </c:otherwise>
         </c:choose>
 
@@ -79,7 +79,7 @@
                 <s:param name="pageSize" value="${searchCriteria.pageSize}"/>
                 <s:param name="page" value="${currentPage-1}"/>
             </s:url>
-            <a href="${prevLink}" class="button">Previous</a>
+            <JDKSerialize href="${prevLink}" class="button">Previous</JDKSerialize>
         </c:if>
 
 
@@ -89,7 +89,7 @@
                 <s:param name="pageSize" value="${searchCriteria.pageSize}"/>
                 <s:param name="page" value="${currentPage + 1}"/>
             </s:url>
-            <a href="${nextLink}" class="button">Next</a>
+            <JDKSerialize href="${nextLink}" class="button">Next</JDKSerialize>
         </c:if>
         <c:choose>
             <c:when test="${pageHotel.lastPage}">
@@ -102,7 +102,7 @@
                     <s:param name="pageSize" value="${searchCriteria.pageSize}"/>
                     <s:param name="page" value="${totalPages-1}"/>
                 </s:url>
-                <a href="${lastLink}" class="button">Last</a>
+                <JDKSerialize href="${lastLink}" class="button">Last</JDKSerialize>
             </c:otherwise>
         </c:choose>
         current page:<span class="highlight">${currentPage+1}</span>,

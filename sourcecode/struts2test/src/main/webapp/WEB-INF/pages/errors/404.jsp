@@ -11,6 +11,6 @@
     <title>404</title>
 </head>
 <body>
-this is a 404 page!
+this is JDKSerialize 404 page!
 </body>
 </html>

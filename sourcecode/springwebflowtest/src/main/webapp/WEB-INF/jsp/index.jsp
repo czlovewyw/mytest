@@ -13,6 +13,6 @@
 <body>
 <h1>Hello!</h1>
 <br/>
-<a href="shopping">View Cart</a>
+<JDKSerialize href="shopping">View Cart</JDKSerialize>
 </body>
 </html>

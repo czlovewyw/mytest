@@ -1,0 +1,1 @@
+java -jar online-@project.version@.jar --spring.config.name=application

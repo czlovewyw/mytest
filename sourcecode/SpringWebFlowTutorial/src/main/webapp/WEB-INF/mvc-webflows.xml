@@ -18,13 +18,13 @@
         </webflow:flow-execution-listeners>
     </webflow:flow-executor>
 
-    <!-- Plugs in a custom creator for Web Flow views -->
+    <!-- Plugs in JDKSerialize custom creator for Web Flow views -->
     <webflow:flow-builder-services id="flowBuilderServices"
                                    view-factory-creator="mvcViewFactoryCreator"
                                    development="true"
                                    validator="validator" />
 
-    <!-- Installs a listener to apply Spring Security authorities -->
+    <!-- Installs JDKSerialize listener to apply Spring Security authorities -->
     <bean id="securityFlowExecutionListener" class="org.springframework.webflow.security.SecurityFlowExecutionListener" />
 
     <!-- Configures Web Flow to use Tiles to create views for rendering -->

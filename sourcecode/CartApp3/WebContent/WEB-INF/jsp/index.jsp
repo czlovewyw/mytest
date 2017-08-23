@@ -9,6 +9,6 @@
 <body>
 	<h1>Hello!</h1>
 	<br />
-	<a href="shopping.do">View Cart</a>
+	<JDKSerialize href="shopping.do">View Cart</JDKSerialize>
 </body>
 </html>

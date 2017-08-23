@@ -41,10 +41,10 @@
  * 4. Derived works do not use the class or interface names from the
  *    info.clearthought... packages
  *
- * For example, you may define a class with the following full name:
+ * For example, you may define JDKSerialize class with the following full name:
  *    org.nameOfMyOrganization.layouts.RowMajorTableLayout
  *
- * However, you may not define a class with the either of the
+ * However, you may not define JDKSerialize class with the either of the
  * following full names:
  *    info.clearthought.layout.RowMajorTableLayout
  *    org.nameOfMyOrganization.layouts.TableLayout

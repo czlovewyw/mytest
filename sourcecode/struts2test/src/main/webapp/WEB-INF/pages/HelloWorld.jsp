@@ -9,7 +9,7 @@
 </head>
 
 <body>
-this is a test
+this is JDKSerialize test
 <%--<h2><s:property value="message" /></h2>--%>
 <h2>${message}</h2>
 <h2>${developer}</h2>

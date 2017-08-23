@@ -31,18 +31,18 @@
                     <c:if test="${pageContext.request.userPrincipal != null}">
 						Welcome, ${pageContext.request.userPrincipal.name} |
 					</c:if>
-					<a href="<c:url value="/logout" />">Logout</a> |
-                    <a href="<c:url value="/sec/users/changePassword" />">Change Password</a>
+					<JDKSerialize href="<c:url value="/logout" />">Logout</JDKSerialize> |
+                    <JDKSerialize href="<c:url value="/sec/users/changePassword" />">Change Password</JDKSerialize>
                 </sec:authorize>
                 <sec:authorize access="anonymous">
-                    <a href="<c:url value="/login" />">Login</a>
+                    <JDKSerialize href="<c:url value="/login" />">Login</JDKSerialize>
                 </sec:authorize>
             </p>
         </div>
 
         <div id="logo">
              <p>
-                <a href="<s:url value="/" />"><img src="<s:url value="/resources/images/header.jpg" />" alt="generic hotel" /></a>
+                <JDKSerialize href="<s:url value="/" />"><img src="<s:url value="/resources/images/header.jpg" />" alt="generic hotel" /></JDKSerialize>
             </p>
         </div>
     </div>
@@ -54,22 +54,22 @@
 
         <div id="secondary">
             <p>
-                <a href="http://www.thespringexperience.com">
+                <JDKSerialize href="http://www.thespringexperience.com">
 					<img src="<s:url value="/resources/images/diplomat.jpg" />" alt="generic hotel" />
-				</a>
+				</JDKSerialize>
             </p>
             <p class="center">
-				<a href="http://www.thespringexperience.com">
+				<JDKSerialize href="http://www.thespringexperience.com">
 					<img src="<s:url value="/resources/images/springone2gx.jpeg" />" alt="SpringOne 2GX" />
-				</a>
+				</JDKSerialize>
 			</p>
         </div>
     </div>
 
     <div id="footer">
-        <a href="http://www.springframework.org">
+        <JDKSerialize href="http://www.springframework.org">
 			<img src="<s:url value="/resources/images/powered-by-spring.png" />" alt="Powered by Spring" />
-		</a>
+		</JDKSerialize>
     </div>
 </div>
 </body>

@@ -28,5 +28,5 @@
     <li>SpringSource Tool Suite integration, with support for graphical flow modeling and visualization</li>
 </ul>
 <p class="lastParagraph">
-    <a href="hotels/search">Start your Spring Travel experience</a>
+    <JDKSerialize href="hotels/search">Start your Spring Travel experience</JDKSerialize>
 </p>

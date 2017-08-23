@@ -1,0 +1,1 @@
+this is JDKSerialize test text;

@@ -61,7 +61,7 @@
                     <s:param name="page" value="${currentPage-1}"/>
                 </s:url>
 
-                <a id="prevLink" href="${prevLink}" class="button">Previous</a>
+                <JDKSerialize id="prevLink" href="${prevLink}" class="button">Previous</JDKSerialize>
 
                 <script type="text/javascript">
                     Spring.addDecoration(new Spring.AjaxEventDecoration({
@@ -77,7 +77,7 @@
                     <s:param name="pageSize" value="${searchCriteria.pageSize}"/>
                     <s:param name="page" value="${currentPage + 1}"/>
                 </s:url>
-                <a id="nextLink" href="${nextLink}" class="button">Next</a>
+                <JDKSerialize id="nextLink" href="${nextLink}" class="button">Next</JDKSerialize>
 
                 <script type="text/javascript">
                     Spring.addDecoration(new Spring.AjaxEventDecoration({
