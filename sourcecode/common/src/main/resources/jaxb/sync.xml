@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConvert encoding="UTF-8" fileSuffix="csv" syncMode="out" updateRecoder="updateRecoder" randomSuffix="true" cleanHistory="5">
+	<data class="vision.apollo.rmp.common.template.impl.CameraInfo">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="isOnline"></field>
+			<field target="decodeTag"></field>
+			<field target="longitude"></field>
+			<field target="latitude"></field>
+			<field target="elevation"></field>
+			<field target="pixel"></field>
+			<field target="cameraType"></field>
+			<field target="recordPos"></field>
+			<field target="recLocation"></field>
+			<field target="deviceIdx">deviceidx</field>
+			<field target="installPlace"></field>
+			<field target="appCode"></field>
+			<field target="matrixCode" />
+			<field target="chanNum" />
+			<field target="treePath" />
+			<field target="seqIdx" />
+			<field target="viewshed" />
+			<field target="cameraDeviceType" />
+		</fields>
+		<params>
+			<param target="typeCode">CAMERA_INFO</param>
+		</params>
+	</data>
+	<data class="vision.apollo.rmp.common.template.impl.DeviceInfo">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="isOnline"></field>
+			<field target="deviceType"></field>
+			<field target="networkAddr"></field>
+			<field target="networkPort"></field>
+			<field target="userName"></field>
+			<field target="userPwd"></field>
+			<field target="appCode"></field>
+			<field target="treePath" />
+			<field target="relateUserId" />
+			<field target="defenseStatus" />
+		</fields>
+		<params>
+			<param target="typeCode">DEVICE_INFO</param>
+		</params>
+	</data>
+	<data class="vision.apollo.rmp.common.template.impl.IoInfo">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="deviceIdx"></field>
+			<field target="ioType"></field>
+			<field target="appCode"></field>
+			<field target="treePath" />
+		</fields>
+		<params>
+			<param target="typeCode">IO_INFO</param>
+		</params>
+	</data>
+	<data class="vision.apollo.rmp.common.template.impl.CrossingInfo">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="laneNum"></field>
+			<field target="crossingType"></field>
+			<field target="latitude"></field>
+			<field target="longitude"></field>
+			<field target="elevation"></field>
+			<field target="appCode"></field>
+			<field target="relatedCameraIndexCode"></field>
+			<field target="treePath" />
+		</fields>
+		<params>
+			<param target="typeCode">CROSSING_INFO</param>
+		</params>
+	</data>
+	<data class="vision.apollo.rmp.common.template.impl.SocialCameraInfo">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="toward"></field>
+			<field target="longitude"></field>
+			<field target="elevation"></field>
+			<field target="firm"></field>
+			<field target="cameraType"></field>
+			<field target="affiliation"></field>
+			<field target="player"></field>
+			<field target="installPlace"></field>
+			<field target="latitude"></field>
+			<field target="responPerson"></field>
+			<field target="telephone"></field>
+			<field target="treePath" />
+		</fields>
+		<params>
+			<param target="typeCode">SOCIAL_CAMERA_INFO</param>
+		</params>
+	</data>
+	<data class="vision.apollo.rmp.common.template.impl.TvWallInfo">
+		<fields>
+			<field target="id"/>
+			<field unique="true" target="originalIndexcode" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="tvmsIndexCode"/>
+			<field target="treePath" />
+		</fields>
+		<params>
+			<param target="typeCode">TVWALL_INFO</param>
+		</params>
+	</data>
+</dataConvert>

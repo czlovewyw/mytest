@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConvert xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="GB18030" relativePath="/csv/downcsv.php?fileName="
+	updateRecoder="FullUpdateTime" xsi:noNamespaceSchemaLocation="../sync-1.0.xsd">
+	<!-- CONTROL_UNIT -->
+	<data class="vision.apollo.rmp.common.domain.ResTreeNode" typeCode="CONTROL_UNIT" fullName="CtrlFull" increName="CtrlIncre">
+		<fields>
+			<field target="indexCode" unique="true" />
+			<field target="name" />
+			<field target="parentIndexCode" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="exsit">1</defaultValue>
+			<defaultValue target="treeCode">vision_base_tree</defaultValue>
+			<defaultValue target="unitType">1</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+		<params>
+			<param target="unitType">1</param>
+		</params>
+	</data>
+	<!-- REGION_INFO -->
+	<data class="vision.apollo.rmp.common.domain.ResTreeNode" typeCode="REGION_INFO" fullName="RegionFull" increName="RegionIncre">
+		<fields>
+			<field target="indexCode" unique="true" />
+			<field target="name" />
+			<field target="parentIndexCode" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="exsit">1</defaultValue>
+			<defaultValue target="treeCode">vision_base_tree</defaultValue>
+			<defaultValue target="unitType">2</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+		<params>
+			<param target="unitType">2</param>
+		</params>
+	</data>
+	<!-- CAMERA_INFO -->
+	<data class="java.util.Map" typeCode="CAMERA_INFO" fullName="CameraFull" increName="CameraIncre">
+		<fields>
+			<field target="originalIndexcode" unique="true" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="isOnline" mapping="0:1,1:0"/>
+			<field target="decodeTag" mapping="hikvision-v3:hikvision,dahua-v3:dahua,h3c-v3:h3c,5301:zjbell5301,5308:zjbell5308,5401:zjbell5401,5508:zjbell5508,NW:liyuan,Bocom:bocom,XC:xinchan,crearo-v3:crearo,BIT-V3:bit"/>
+			<field target="longitude" />
+			<field target="latitude" />
+			<field target="elevation" />
+			<field target="pixel" />
+			<field target="cameraType" />
+			<field target="recordPos" />
+			<field target="installPlace" />
+			<field target="recLocation" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">CAMERA_INFO</defaultValue>
+			<defaultValue target="chanNum">0</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="recLocation" model="forceUpdate" />
+			<updateExclude target="longitude" model="zero" />
+			<updateExclude target="latitude" model="zero" />
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	<data class="java.util.Map" typeCode="CROSSING_INFO" fullName="CrossingFull" increName="CrossingIncre">
+		<fields>
+			<field target="treeNodeIndexcode"/>
+			<field target="originalIndexcode" unique="true"/>
+			<field target="laneNum"/>
+			<field target="name"/>
+			<field target="longitude"/>
+			<field target="latitude"/>
+			<field target="crossingType"/>
+			<field target="intercity"/>
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">CROSSING_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="longitude" model="zero" />
+			<updateExclude target="latitude" model="zero" />
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	<data class="java.util.Map" typeCode="LANE_INFO" increName="LaneIncre" fullName="LaneFull">
+		<fields>
+			<field target="originalIndexcode" unique="true"/>
+			<field target="name"/>
+			<field target="laneNumber"/>
+			<field target="relatedCameraIndexCode"/>
+			<field target="crossingIndexCode"/>
+			<field target="treeNodeIndexcode"/>
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">LANE_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+</dataConvert>

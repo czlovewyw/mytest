@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConvert xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="UTF-8" relativePath="/resFiles/"
+	updateRecoder="updateRecoder" xsi:noNamespaceSchemaLocation="../sync-1.0.xsd">
+	<!-- CONTROL_UNIT -->
+	<data class="vision.apollo.rmp.common.domain.ResTreeNode" typeCode="CONTROL_UNIT">
+		<fields>
+			<field target="indexCode" unique="true" />
+			<field target="name" />
+			<field target="parentIndexCode" />
+			<field target="seqIdx"/>
+			<field target="cascadeCode"/>
+		</fields>
+		<defaultValues>
+			<defaultValue target="exsit">1</defaultValue>
+			<defaultValue target="treeCode">vision_base_tree</defaultValue>
+			<defaultValue target="unitType">1</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+		<params>
+			<param target="unitType">1</param>
+		</params>
+	</data>
+	<!-- REGION_INFO -->
+	<data class="vision.apollo.rmp.common.domain.ResTreeNode" typeCode="REGION_INFO">
+		<fields>
+			<field target="indexCode" unique="true" />
+			<field target="name" />
+			<field target="parentIndexCode" />
+			<field target="seqIdx"/>
+			<field target="cascadeCode"/>
+		</fields>
+		<defaultValues>
+			<defaultValue target="exsit">1</defaultValue>
+			<defaultValue target="treeCode">vision_base_tree</defaultValue>
+			<defaultValue target="unitType">2</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+		<params>
+			<param target="unitType">2</param>
+		</params>
+	</data>
+	<!-- DEVICE_INFO -->
+	<data class="java.util.Map" typeCode="DEVICE_INFO">
+		<fields>
+			<field target="originalIndexcode" unique="true" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="isOnline" mapping="0:1,1:0"/>
+			<field target="deviceType" />
+			<field target="networkAddr" />
+			<field target="networkPort" />
+			<field target="userName" />
+			<field target="userPwd" />
+			<field target="seqIdx"/>
+			<field target="relateUserId" />
+			<field target="defenseStatus" />
+			<field target="cascadeIndexCode" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">DEVICE_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	<!-- CAMERA_INFO -->
+	<data class="java.util.Map" typeCode="CAMERA_INFO">
+		<fields>
+			<field target="originalIndexcode" unique="true" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="isOnline" mapping="0:1,1:0"/>
+			<field target="decodeTag" />
+			<field target="longitude" />
+			<field target="latitude" />
+			<field target="elevation" />
+			<field target="pixel" />
+			<field target="cameraType" />
+			<field target="recordPos" />
+			<field target="recLocation" />
+			<field target="deviceIdx" />
+			<field target="installPlace" />
+			<field target="matrixCode" />
+			<field target="chanNum" />
+			<field target="seqIdx"/>
+			<field target="cascadeCode"/>
+			<field target="viewshed" />
+			<field target="cameraDeviceType" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="isOnline">0</defaultValue>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">CAMERA_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="viewshed" model="forceUpdate" />
+			<updateExclude target="recLocation" model="forceUpdate" />
+			<updateExclude target="longitude" model="zero" />
+			<updateExclude target="latitude" model="zero" />
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	<!-- IO_INFO -->
+	<data class="java.util.Map" typeCode="IO_INFO">
+		<fields>
+			<field target="originalIndexcode" unique="true" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="deviceIdx" />
+			<field target="ioType" />
+			<field target="chanNum" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">IO_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	<!-- TVWALL_INFO -->
+	<data class="java.util.Map" typeCode="TVWALL_INFO">
+		<fields>
+			<field target="originalIndexcode" unique="true" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="tvmsIndexCode" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">TVWALL_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+</dataConvert>

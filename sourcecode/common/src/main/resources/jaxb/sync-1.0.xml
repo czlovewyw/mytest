@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConvert xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="UTF-8" randomSuffix="true" updateRecoder="updateRecoder" xsi:noNamespaceSchemaLocation="../sync-1.0.xsd">
+	<data class="java.util.Map" typeCode="DEVICE_INFO">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="isOnline"></field>
+			<field target="deviceType"></field>
+			<field target="networkAddr"></field>
+			<field target="networkPort"></field>
+			<field target="userName"></field>
+			<field target="userPwd"></field>
+			<field target="appCode"></field>
+			<field target="treePath" />
+			<field target="relateUserId" />
+			<field target="cascadeIndexCode" />
+		</fields>
+	</data>
+	<data class="java.util.Map" typeCode="CAMERA_INFO">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="isOnline"></field>
+			<field target="decodeTag"></field>
+			<field target="longitude"></field>
+			<field target="latitude"></field>
+			<field target="elevation"></field>
+			<field target="pixel"></field>
+			<field target="cameraType"></field>
+			<field target="recordPos"></field>
+			<field target="recLocation"></field>
+			<field target="deviceIdx">deviceidx</field>
+			<field target="installPlace"></field>
+			<field target="appCode"></field>
+			<field target="matrixCode" />
+			<field target="chanNum" />
+			<field target="treePath" />
+			<field target="seqIdx" />
+			<field target="viewshed" />
+			<field target="cameraDeviceType" />
+			<field target="cascadeCode"/>
+		</fields>
+	</data>
+	<data class="java.util.Map" typeCode="IO_INFO">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="deviceIdx"></field>
+			<field target="ioType"></field>
+			<field target="appCode"></field>
+			<field target="chanNum" />
+			<field target="treePath" />
+		</fields>
+	</data>
+	<data class="java.util.Map" typeCode="CROSSING_INFO">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="laneNum"></field>
+			<field target="crossingType"></field>
+			<field target="latitude"></field>
+			<field target="longitude"></field>
+			<field target="elevation"></field>
+			<field target="appCode"></field>
+			<field target="relatedCameraIndexCode"></field>
+			<field target="treePath" />
+		</fields>
+	</data>
+	<data class="java.util.Map" typeCode="SOCIAL_CAMERA_INFO">
+		<fields>
+			<field target="id"></field>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="toward"></field>
+			<field target="longitude"></field>
+			<field target="elevation"></field>
+			<field target="firm"></field>
+			<field target="cameraType"></field>
+			<field target="affiliation"></field>
+			<field target="player"></field>
+			<field target="installPlace"></field>
+			<field target="latitude"></field>
+			<field target="responPerson"></field>
+			<field target="telephone"></field>
+			<field target="treePath" />
+		</fields>
+	</data>
+	<data class="java.util.Map" typeCode="TVWALL_INFO">
+		<fields>
+			<field target="id"/>
+			<field unique="true" target="originalIndexcode" />
+			<field target="name" />
+			<field target="treeNodeIndexcode" />
+			<field target="tvmsIndexCode"/>
+			<field target="treePath" />
+		</fields>
+	</data>
+<!-- 	<data class="java.util.Map" typeCode="DEVICE_PRIVILEGE"> -->
+<!-- 		<fields> -->
+<!-- 			<field unique="true" target="originalIndexcode" /> -->
+<!-- 			<field target="typeCode" /> -->
+<!-- 			<field target="userIds" /> -->
+<!-- 		</fields> -->
+<!-- 	</data> -->
+<!-- 	<data class="java.util.Map" typeCode="CAMERA_PRIVILEGE"> -->
+<!-- 		<fields> -->
+<!-- 			<field unique="true" target="originalIndexcode" /> -->
+<!-- 			<field target="typeCode" /> -->
+<!-- 			<field target="userIds" /> -->
+<!-- 		</fields> -->
+<!-- 	</data> -->
+<!-- 	<data class="java.util.Map" typeCode="CROSSING_PRIVILEGE"> -->
+<!-- 		<fields> -->
+<!-- 			<field unique="true" target="originalIndexcode" /> -->
+<!-- 			<field target="typeCode" /> -->
+<!-- 			<field target="userIds" /> -->
+<!-- 		</fields> -->
+<!-- 	</data> -->
+<!-- 	<data class="java.util.Map" typeCode="TVWALL_PRIVILEGE"> -->
+<!-- 		<fields> -->
+<!-- 			<field unique="true" target="originalIndexcode" /> -->
+<!-- 			<field target="typeCode" /> -->
+<!-- 			<field target="userIds" /> -->
+<!-- 		</fields> -->
+<!-- 	</data> -->
+<!-- 	<data class="java.util.Map" typeCode="IO_PRIVILEGE"> -->
+<!-- 		<fields> -->
+<!-- 			<field unique="true" target="originalIndexcode" /> -->
+<!-- 			<field target="typeCode" /> -->
+<!-- 			<field target="userIds" /> -->
+<!-- 		</fields> -->
+<!-- 	</data> -->
+<!-- 	<data class="java.util.Map" typeCode="SOCIAL_CAMERA_PRIVILEGE"> -->
+<!-- 		<fields> -->
+<!-- 			<field unique="true" target="originalIndexcode" /> -->
+<!-- 			<field target="typeCode" /> -->
+<!-- 			<field target="userIds" /> -->
+<!-- 		</fields> -->
+<!-- 	</data> -->
+	<notifys>
+		<notify appType="gis" relativePath="/gisplatform/servlet/dataSync"></notify>
+	</notifys>
+	
+	
+	<data class="vision.apollo.app.domain.CascadeImp" typeCode="table_cascadeimp_code">
+		<fields>
+			<field unique="true" target="code" />
+			<field target="name" />
+			<field target="ip" />
+			<field target="port" />
+			<field target="contextPath" />
+			<field target="self" />
+			<field target="status" />
+			<field target="persist" />
+			<field target="remark" />
+			<field target="domainCode" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="status">1</defaultValue>
+			<defaultValue target="persist">0</defaultValue>
+			<defaultValue target="self">0</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	
+	<data class="vision.apollo.app.domain.CascadeDomain" typeCode="table_cascadedomain_code">
+		<fields>
+			<field unique="true" target="code" />
+			<field target="name" />
+			<field target="parentCode" />
+			<field target="nodeTree" />
+			<field target="status" />
+			<field target="persist" />
+			<field target="remark" />
+		</fields>
+		<defaultValues>
+			<defaultValue target="status">1</defaultValue>
+			<defaultValue target="persist">0</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	
+	<data class="vision.apollo.ups.domain.Department" typeCode="table_dept_indexCode">
+		<fields>
+			<field target="indexCode" unique="true" />
+			<field target="name" />
+			<field target="shortLetter" />
+			<field target="orgIndexCode" />
+			<field target="parentIndexCode" />
+			<field target="treeLevel"/>
+			<field target="nodeTree"/>
+			<field target="cascadeDomainCode"/>
+			<field target="status"/>
+			<field target="remark"/>
+			<field target="weight"/>
+			<field target="createUser"/>
+		</fields>
+		<defaultValues>
+			<defaultValue target="parentIndexCode">0</defaultValue>
+			<defaultValue target="treeLevel">1</defaultValue>
+			<defaultValue target="status">1</defaultValue>
+			<defaultValue target="weight">0</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+	</data>
+	
+	<data class="vision.apollo.ups.domain.User" typeCode="table_cascadeusersync_name">
+		<fields>
+			<field target="id" />
+			<field target="code" />
+			<field target="name" />
+			<field target="shortLetter"/>
+			<field target="cardId"/>
+			<field target="shortNum"/>
+			<field target="pwd"/>
+			<field target="status"/>
+			<field target="persist"/>
+			<field target="orgIndexCode"/>
+			<field target="deptIndexCode"/>
+			<field target="realName"/>
+			<field target="extendDeptAuth"/>
+			<field target="phone"/>
+			<field target="email"/>
+			<field target="priority"/>
+			<field target="weight"/>
+			<field target="lastLoginType"/>
+			<field target="loginType"/>
+			<field target="macAddress"/>
+			<field target="ipAddress"/>
+			<field target="ipSegment"/>
+			<field target="remark"/>
+			<field target="ownerUserId"/>
+			<field target="cascadeDomainCode"/>
+			<field target="onlineNumber"/>
+			<field target="tickable"/>
+			<field target="spellings"/>
+			<field target="cascadeSync"/>
+			<field target="expireTime"/>
+		</fields>
+		<defaultValues>
+			<defaultValue target="status">1</defaultValue>
+			<defaultValue target="persist">0</defaultValue>
+			<defaultValue target="extendDeptAuth">0</defaultValue>
+			<defaultValue target="priority">50</defaultValue>
+			<defaultValue target="weight">0</defaultValue>
+			<defaultValue target="loginTimes">0</defaultValue>
+			<defaultValue target="loginType">0</defaultValue>
+			<defaultValue target="onlineNumber">0</defaultValue>
+			<defaultValue target="cascadeSync">0</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force"/>
+		</updateExcludes>
+		<valueExcludes>
+			<valueExclude target="name">admin</valueExclude>
+		</valueExcludes>
+	</data>
+	
+	<data class="java.util.Map" typeCode="CASCADERMP_SOCIAL_CAMERA_INFO">
+		<fields>
+			<field unique="true" target="originalIndexcode"></field>
+			<field target="name"></field>
+			<field target="treeNodeIndexcode"></field>
+			<field target="toward"></field>
+			<field target="longitude"></field>
+			<field target="elevation"></field>
+			<field target="firm"></field>
+			<field target="cameraType"></field>
+			<field target="affiliation"></field>
+			<field target="player"></field>
+			<field target="installPlace"></field>
+			<field target="latitude"></field>
+			<field target="responPerson"></field>
+			<field target="telephone"></field>
+			<field target="treePath" />
+			<field target="enable" />
+			<field target="picUrl" />
+			<field target="vidUrl" />
+			<field target="CASCADE_DOMAIN_CODE" />
+		</fields>
+	</data>
+	
+</dataConvert>

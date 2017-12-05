@@ -40,6 +40,7 @@ public class ZooInspector
 	{
 		try
 		{
+			System.out.println(ZooInspectorManagerImpl.class.getClassLoader().getResource(""));
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			JFrame frame = new JFrame("ZooInspector");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

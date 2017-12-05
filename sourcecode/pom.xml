@@ -15,6 +15,9 @@
         <module>springwebflowtest</module>
         <module>zk-gui</module>
         <module>webjars</module>
+        <module>jdk6test</module>
+        <module>jdk6test</module>
+        <module>simpleToken</module>
     </modules>
 
     <dependencies>

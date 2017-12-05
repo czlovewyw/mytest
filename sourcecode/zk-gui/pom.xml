@@ -58,10 +58,10 @@
                 <!--<includes>-->
                     <!--<include>*.txt</include>-->
                 <!--</includes>-->
-                <excludes>
+<!--                <excludes>
                     <exclude>config/*</exclude>
                     <exclude>icons/*</exclude>
-                </excludes>
+                </excludes>-->
             </resource>
         </resources>
         <plugins>

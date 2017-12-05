@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataConvert xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="UTF-8" fileSuffix="xml" relativePath="/data/"
+	updateRecoder="updateRecoder" xsi:noNamespaceSchemaLocation="../sync-1.0.xsd">
+	<!-- CONTROL_UNIT -->
+	<data class="vision.apollo.rmp.common.domain.ResTreeNode" typeCode="CONTROL_UNIT" fullName="1000">
+		<fields>
+			<field target="indexCode" unique="true">c_index_code</field>
+			<field target="name">c_org_name</field>
+			<field target="parentIndexCode">c_parent_index_code</field>
+			<field target="seqIdx">i_order</field>
+		</fields>
+		<defaultValues>
+			<defaultValue target="exsit">1</defaultValue>
+			<defaultValue target="treeCode">vision_base_tree</defaultValue>
+			<defaultValue target="unitType">1</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force" />
+		</updateExcludes>
+		<params>
+			<param target="unitType">1</param>
+		</params>
+	</data>
+	<!-- DEVICE_INFO -->
+	<data class="java.util.Map" typeCode="DEVICE_INFO" fullName="30000">
+		<fields>
+			<field target="originalIndexcode" unique="true">c_index_code</field>
+			<field target="name">c_name</field>
+			<field target="treeNodeIndexcode">c_org_index_code</field>
+			<field target="isOnline">i_is_online</field>
+			<field target="deviceType">i_device_type</field>
+			<field target="networkAddr">c_ip</field>
+			<field target="networkPort">i_port</field>
+			<field target="userName">c_user_name</field>
+			<field target="userPwd">c_user_pwd</field>
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">DEVICE_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force" />
+		</updateExcludes>
+	</data>
+	<!-- CAMERA_INFO -->
+	<data class="java.util.Map" typeCode="CAMERA_INFO" fullName="10000">
+		<fields>
+			<field target="originalIndexcode" unique="true">c_index_code</field>
+			<field target="name">c_name</field>
+			<field target="treeNodeIndexcode">c_org_index_code</field>
+			<field target="isOnline">i_is_online</field>
+			<field target="decodeTag" default="hikvision"/>
+			<field target="longitude">c_longitude</field>
+			<field target="latitude">c_latitude</field>
+			<field target="elevation" />
+			<field target="pixel" default="1"/>
+			<field target="cameraType">i_camera_type</field>
+			<field target="recordPos" default="1"/>
+			<field target="recLocation" default="999"/>
+			<field target="deviceIdx">c_device_index_code</field>
+			<field target="installPlace" />
+			<field target="matrixCode">c_matrix_code</field>
+			<field target="chanNum">i_channel_no</field>
+			<field target="cascadeCode">c_cascade_code</field>
+			<field target="streamLinkType">i_stream_link_type</field>
+			<field target="streamType">i_stream_type</field>
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">CAMERA_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="longitude" model="zero" />
+			<updateExclude target="latitude" model="zero" />
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force" />
+		</updateExcludes>
+	</data>
+	<!-- IO_INFO -->
+	<data class="java.util.Map" typeCode="IO_INFO" fullName="40000">
+		<fields>
+			<field target="originalIndexcode" unique="true">c_index_code</field>
+			<field target="name">c_name</field>
+			<field target="treeNodeIndexcode">c_org_index_code</field>
+			<field target="deviceIdx">c_device_index_code</field>
+			<field target="ioType">i_type</field>
+			<field target="chanNum">i_channel_no</field>
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">IO_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force" />
+		</updateExcludes>
+	</data>
+	<!-- TVWALL_INFO -->
+	<data class="java.util.Map" typeCode="TVWALL_INFO" fullName="50000">
+		<fields>
+			<field target="originalIndexcode" unique="true">c_index_code</field>
+			<field target="name">c_name</field>
+			<field target="treeNodeIndexcode">c_org_index_code</field>
+			<field target="tvmsIndexCode">c_tvwall_server_index_code</field>
+		</fields>
+		<defaultValues>
+			<defaultValue target="enable">1</defaultValue>
+			<defaultValue target="typeCode">TVWALL_INFO</defaultValue>
+		</defaultValues>
+		<updateExcludes>
+			<updateExclude target="createTime" model="force" />
+			<updateExclude target="updateTime" model="force" />
+		</updateExcludes>
+	</data>
+	<notifys>
+		<notify appType="gis" relativePath="/gisplatform/servlet/dataSync"></notify>
+	</notifys>
+</dataConvert>
